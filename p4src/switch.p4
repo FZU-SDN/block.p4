@@ -124,7 +124,7 @@ control ingress {
     process_ip_sourceguard();
 
     /* INT src,sink determination */
-    process_int_endpoint();
+    //process_int_endpoint();
 
     /* ingress sflow determination */
     process_ingress_sflow();
@@ -282,7 +282,7 @@ control egress {
                     process_mtu();
 
                     /* INT processing */
-                    process_int_insertion();
+                    //process_int_insertion();
 
                     /* egress nat processing */
                     process_egress_nat();
@@ -296,7 +296,7 @@ control egress {
             process_tunnel_encap();
 
             /* update underlay header based on INT information inserted */
-            process_int_outer_encap();
+            //process_int_outer_encap();
 
             if (egress_metadata.port_type == PORT_TYPE_NORMAL) {
                 /* egress vlan translation */

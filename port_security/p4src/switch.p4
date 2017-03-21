@@ -1,59 +1,18 @@
 /*********************************
-
  FuZhou University, SDNLab
- Added by Chen, 2017.3.20
-
+ Added by Chen, 2017.3.21
  *********************************/
 
 /*********************************
-
  This file is used to add security
  features to l2 switch.
-
  We refered to the P4 program 
  offered by Barefoot.
-
  *********************************/
 
-// header
-
-header_type ethernet_t {
-    fields {
-        dstAddr : 48;
-        srcAddr : 48;
-        etherType : 16;
-    }
-}
-
-header_type intrinsic_metadata_t {
-    fields {
-        mcast_grp : 4;
-        egress_rid : 4;
-        mcast_hash : 16;
-        lf_field_list: 32;
-    }
-}
-
-header_type port_sec_metadata_t {
-	fields {
-		port : 4;
-	}
-}
-
-// parser
-
-parser start {
-    return parse_ethernet;
-}
-
-header ethernet_t ethernet;
-metadata intrinsic_metadata_t intrinsic_metadata;
-metadata port_sec_metadata_t port_sec_metadata;
-
-parser parse_ethernet {
-    extract(ethernet);
-    return ingress;
-}
+#include "includes/header.p4"
+#include "includes/parser.p4"
+#include "includes/port_security.p4"
 
 // table and action
 
@@ -111,16 +70,6 @@ table mcast_src_pruning {
     size : 1;
 }
 
-// port_security
-
-table port_security {
-	reads {
-		ethernet.srcAddr : exact;
-		port_sec_metadata.port : exact;
-	}
-	actions {_nop; _drop;}
-}
-
 control ingress {
     apply(smac);
     apply(dmac);
@@ -130,6 +79,5 @@ control egress {
     if(standard_metadata.ingress_port == standard_metadata.egress_port) {
         apply(mcast_src_pruning);
     }
-    apply(port_security);
+    port_security_process();
 }
-
