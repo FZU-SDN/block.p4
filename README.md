@@ -6,9 +6,9 @@ Fuzhou University SDN Lab | P4
 This repo is used to present the common function blocks in l2 switch that writed in P4.
 We create the environment to test these blocks with mininet simulation tools.
 
-## SUPPORT
+## SUPPORT FEATURES
 
-1.port security
-2.IP source guard
+port security
+
 
 ## JOIN US NOW!
