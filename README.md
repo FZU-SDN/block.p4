@@ -8,7 +8,6 @@ We create the environment to test these blocks with mininet simulation tools.
 
 ## SUPPORT FEATURES
 
-port security
+0.features in `p4src`
 
-
-## JOIN US NOW!
+1.port security
