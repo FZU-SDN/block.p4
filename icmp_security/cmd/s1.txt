@@ -1,0 +1,4 @@
+table_set_default icmp_forbidden _nop
+table_set_default icmp_of_death _nop
+table_add icmp_forbidden _drop 10.0.0.1 =>
+table_add icmp_of_death icmp_cnt 10.0.0.2 => 0 
