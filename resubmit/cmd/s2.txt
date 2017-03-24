@@ -1,0 +1,2 @@
+table_set_default resubmit_select _nop
+table_set_default resubmit_process _nop
