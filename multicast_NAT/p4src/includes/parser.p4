@@ -10,7 +10,6 @@ parser start {
 }
 
 header ethernet_t ethernet;
-metadata intrinsic_metadata_t intrinsic_metadata;
 
 #define ETHERTYPE_BF_FABRIC    0x9000
 #define ETHERTYPE_VLAN         0x8100
