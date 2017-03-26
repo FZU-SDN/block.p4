@@ -1,0 +1,7 @@
+table_set_default pkt_color_tag _nop
+table_set_default pkt_color_filter _nop
+table_add pkt_color_tag color_tag 10.0.0.3 => 0
+table_add pkt_color_filter pkt_cnt 0 => 0
+table_add pkt_color_filter pkt_cnt 1 => 1
+table_add pkt_color_filter pkt_filter 2 => 
+meter_array_set_rates trTCM_meter 0.0000005:1 0.00001:1
