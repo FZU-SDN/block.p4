@@ -1,0 +1,5 @@
+table_set_default http_distinct _drop
+table_add http_distinct do_http_security 80 =>
+table_set_default udp_flood udp_drop
+table_set_default icmp_forbidden _nop
+table_set_default icmp_of_death _nop
