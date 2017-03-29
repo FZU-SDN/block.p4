@@ -1,0 +1,1 @@
+counter_read pkt_color_counter 2

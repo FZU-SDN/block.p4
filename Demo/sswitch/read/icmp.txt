@@ -1,0 +1,1 @@
+counter_read icmp_counter 0

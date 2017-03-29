@@ -1,0 +1,1 @@
+counter_read mirror_counter 0
