@@ -1,4 +1,4 @@
-## Demo: sw2http_sw3icmp
+## Demo: http_icmp_udp
 
 This Demo present a topologic that owns four switches and six hosts:
 
@@ -8,7 +8,7 @@ hosts: h1 h2 h3 h4 h5 h6
 links: h1-s1 h2-s1 h3-s1 h4-s4 h5-s4 h6-s4 s1-s2 s1-s3 s2-s4 s3-s4
 ```
 
-To run this demo, first start the mininet and then "learning MAC" like other demo did. Then apply the commands in dir `cmd` by `./run.sh`.
+To run this demo, first start the mininet and then "learning MAC" like other demo did. Then apply the commands in dir `cmdv1` by `./run.sh`.
 
 Then you can see different features that different switches supported: s1 and s4 do nothing to the incoming packets; s2 has been deployed to count the http packets with the TCP port 80, and drop any other packets include icmp, udp and so on; s3 only permit the icmp packets that srcAddr is `10.0.0.1` or `10.0.0.4`, that means only h1 and h4 can ping each other successfully through the network, Besides, s3 drop all the incoming UDP packets and then count it.
 
@@ -56,4 +56,8 @@ The results proved that the specific features have been deployed to the switch s
 
 You can also start a wireshark process to capture the packets by assigning the socket `s4-eth1` to validate it.
 
-Chen, 2017.3.28
+Another cmd dir named `cmdv2` united both the http feature and icmp+udp feature to switch s2 and s3. The experiment steps are the same that showed above, and you can check both the `http_counter` and `icmp_counter` in s2 and s3, that means the P4 switches support these features at the same time.
+
+
+
+Chen, 2017.3
