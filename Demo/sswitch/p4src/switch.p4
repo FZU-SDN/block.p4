@@ -25,6 +25,7 @@ limitations under the License. */
 #include "blocks/port_mirror.p4"
 #include "blocks/trTCM.p4"
 #include "blocks/udp_flood.p4"
+#include "blocks/resubmit.p4"
 
 // table and action
 
@@ -92,6 +93,9 @@ control ingress {
 
     // trTCM:
     trTCM_process();
+    // resubmit:
+    resubmit_ingress();
+    resubmit_egress();
 }
 
 control egress {
