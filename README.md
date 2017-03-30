@@ -1,10 +1,11 @@
 # block.p4
+
 Fuzhou University SDN Lab | P4
 
 This repo is used to present the common function blocks in l2 switch that writed in P4.
 We create the environment to test these blocks with mininet simulation tools.
 
-**TODO:**
+## TODO
 
 First copy the dirs `p4src` and `cmd` in the block such as port security to the `env` dir. 
 
@@ -22,7 +23,7 @@ cd mclearn
 
 Then you can start these blocks with the env.
 
-**SUPPORT FEATURES**
+## SUPPORT FEATURES
 
 0.features in `p4src`
 
@@ -41,3 +42,12 @@ Then you can start these blocks with the env.
 7.trTCM
 
 8.ECMP
+
+## Demo
+
+We have created two demo in dir `Demo`, `http_icmp_udp` and `sswitch`. 
+
+The `http_icmp_udp` is a explaination example that one switch enabled the http security feature and another switch enabled both the icmp and udp security. See [http_icmp_udp](https://github.com/Emil-501/block.p4/tree/master/Demo/http_icmp_udp). 
+
+The `sswitch` united all the blocks in one P4 switch pipeline, see [sswitch](https://github.com/Emil-501/block.p4/tree/master/Demo/sswitch) for more informations. 
+
