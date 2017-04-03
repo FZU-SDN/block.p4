@@ -43,6 +43,8 @@ Then you can start these blocks with the env.
 
 8.ECMP
 
+9.TCP SYN/FIN check
+
 ## Demo
 
 We have created two demo in dir `Demo`, `http_icmp_udp` and `sswitch`. 
@@ -51,3 +53,4 @@ The `http_icmp_udp` is a explaination example that one switch enabled the http s
 
 The `sswitch` united all the blocks in one P4 switch pipeline, see [sswitch](https://github.com/Emil-501/block.p4/tree/master/Demo/sswitch) for more informations. 
 
+The `DDoS` showed that how we defense the SYN/FIN/UDP DDoS attack with trTCM and TCP check. See [DDoS](https://github.com/Emil-501/block.p4/tree/master/Demo/DDoS).
