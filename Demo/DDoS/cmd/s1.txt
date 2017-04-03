@@ -1,0 +1,8 @@
+table_set_default white_list _nop
+table_set_default icmp_forbidden _nop
+table_set_default icmp_of_death _nop
+table_set_default tcp_check _nop
+table_set_default egress_drop _nop
+table_set_default pkt_color_tag _nop
+table_set_default pkt_color_filter _nop
+table_set_default udp_flood _nop

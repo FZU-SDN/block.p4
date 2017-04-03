@@ -1,0 +1,23 @@
+table_set_default white_list _nop
+table_set_default icmp_forbidden _nop
+table_set_default icmp_of_death _nop
+table_set_default tcp_check _nop
+table_set_default egress_drop _drop
+table_set_default pkt_color_tag _nop
+table_set_default pkt_color_filter _nop
+table_set_default udp_flood _drop
+table_add white_list white_action 10.0.0.1 =>
+table_add white_list white_action 10.0.0.2 =>
+table_add white_list white_action 10.0.0.3 =>
+table_add white_list white_action 10.0.0.4 =>
+table_add white_list white_action 10.0.0.5 =>
+table_add white_list white_action 10.0.0.6 =>
+table_add tcp_check hit_tag 00000001 => 1
+table_add tcp_check hit_tag 00000002 => 0
+table_add pkt_color_tag color_tag 10.0.0.4 => 0
+table_add pkt_color_tag color_tag 10.0.0.5 => 1
+table_add pkt_color_tag color_tag 10.0.0.6 => 2
+table_add pkt_color_filter pkt_cnt 0 => 0
+table_add pkt_color_filter pkt_filter 1 => 1
+table_add pkt_color_filter pkt_filter 2 => 2
+meter_array_set_rates trTCM_meter 0.0000005:1 0.00001:1
