@@ -28,6 +28,10 @@ We create the environment to test these blocks by using mininet simulation tools
 - "sswitch": The `sswitch` united all the blocks in one P4 switch pipeline, see [sswitch](https://github.com/Emil-501/block.p4/tree/master/Demo/sswitch) for more informations. 
 - "DDoS": The `DDoS` showed that how to simply defense the SYN/FIN/UDP DDoS attack with trTCM and TCP check. See [DDoS](https://github.com/Emil-501/block.p4/tree/master/Demo/DDoS).
 
+## Next Steps
+
+Our following works focus on the combination between NFV SFC and P4 language. For more details, try this repository: [OpenP4SC](https://github.com/Emil-501/OpenP4SC).
+
 ## Questions
 
 Mail: wasdnsxchen@gmail.com
